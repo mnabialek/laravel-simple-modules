@@ -121,10 +121,13 @@ trait ModuleCreator
      */
     protected function createDirectory(Module $module, $directory)
     {
-        if (!$this->exists($directory, $module)) {
+        if( file_exists(base_path().DIRECTORY_SEPARATOR.$directory)){
+            return true;
+        }else{
             $result =
                 $this->laravel['files']->makeDirectory($module->directory() .
                     DIRECTORY_SEPARATOR . $directory, 0755, true);
+
             if ($result) {
                 $this->line("[Module {$module->name()}] Created directory {$directory}");
             } else {
@@ -133,7 +136,6 @@ trait ModuleCreator
 
             return true;
         }
-
         return false;
     }
 
@@ -233,11 +235,18 @@ trait ModuleCreator
         $destinationFile,
         array $replacements = []
     ) {
-        $result = $this->laravel['files']->put($module->directory() .
-            DIRECTORY_SEPARATOR . $destinationFile,
-            $this->replace($this->laravel['files']->get($sourceFile), $module,
-                $replacements)
-        );
+        if(file_exists(base_path().DIRECTORY_SEPARATOR.dirname($destinationFile))){
+            $result = $this->laravel['files']->put($destinationFile,
+                $this->replace($this->laravel['files']->get($sourceFile), $module,
+                    $replacements)
+            );
+        }else{
+            $result = $this->laravel['files']->put($module->directory() .
+                DIRECTORY_SEPARATOR . $destinationFile,
+                $this->replace($this->laravel['files']->get($sourceFile), $module,
+                    $replacements)
+            );
+        }
 
         if ($result === false) {
             throw new Exception("[Module {$module->name()}] Cannot create file {$destinationFile}");

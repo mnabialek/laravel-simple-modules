@@ -48,7 +48,7 @@ return [
         /*
          * Path (inside module) where migrations file should be created
          */
-        'path' => 'Database/Migrations',
+        'path' => 'Db/Migrations',
     ],
 
     /*
@@ -58,13 +58,13 @@ return [
         /*
          * Seeder filename
          */
-        'file' => 'Database/Seeds/{class}DatabaseSeeder.php',
+        'file' => 'Db/Seeds/{class}DatabaseSeeder.php',
 
         /*
          * Seeder namespace (it will be automatically prefixed with modules
          * namespace)
          */
-        'namespace' => 'Database\\Seeds',
+        'namespace' => 'Db\\Seeds',
     ],
 
     /*
@@ -101,7 +101,7 @@ return [
         /*
          * Model factory file path and name (inside module)
          */
-        'file' => 'Database/Factories/{class}ModelFactory.php',
+        'file' => 'Db/Factories/{class}ModelFactory.php',
     ],
 
     /*
@@ -172,9 +172,9 @@ return [
                 'Exceptions',
                 'Http/Controllers',
                 'Http/Requests',
-                'Database/Migrations',
-                'Database/Seeds',
-                'Database/Factories',
+                'Db/Migrations',
+                'Db/Seeds',
+                'Db/Factories',
             ],
             'files' => [
                 'Models/.gitkeep' => '.gitkeep.stub',
@@ -183,16 +183,16 @@ return [
                 'Exceptions/.gitkeep' => '.gitkeep.stub',
                 'Http/Controllers/.gitkeep' => '.gitkeep.stub',
                 'Http/Requests/.gitkeep' => '.gitkeep.stub',
-                'Database/Migrations/.gitkeep' => '.gitkeep.stub',
-                'Database/Seeds/.gitkeep' => '.gitkeep.stub',
-                'Database/Factories/.gitkeep' => '.gitkeep.stub',
+                'Db/Migrations/.gitkeep' => '.gitkeep.stub',
+                'Db/Seeds/.gitkeep' => '.gitkeep.stub',
+                'Db/Factories/.gitkeep' => '.gitkeep.stub',
                 'Http/Controllers/{class}Controller.php' => 'Controller.php.stub',
                 'Http/Requests/{class}Request.php' => 'Request.php.stub',
                 'Models/{class}.php' => 'Model.php.stub',
                 'routes/web.php' => 'routes_web.php.stub',
                 'routes/api.php' => 'routes_api.php.stub',
-                'Database/Seeds/{class}DatabaseSeeder.php' => 'DatabaseSeeder.php.stub',
-                'Database/Factories/{class}ModelFactory.php' => 'ModelFactory.php.stub',
+                'Db/Seeds/{class}DatabaseSeeder.php' => 'DatabaseSeeder.php.stub',
+                'Db/Factories/{class}ModelFactory.php' => 'ModelFactory.php.stub',
                 'Repositories/{class}Repository.php' => 'Repository.php.stub',
                 'Services/{class}Service.php' => 'Service.php.stub',
             ],
@@ -202,7 +202,7 @@ return [
             'files' => [
                 'Http/Controllers/{class}Controller.php' => 'Controller.php.stub',
                 'Models/{class}.php' => 'Model.php.stub',
-                'Database/Seeds/{class}DatabaseSeeder.php' => 'DatabaseSeeder.php.stub',
+                'Db/Seeds/{class}DatabaseSeeder.php' => 'DatabaseSeeder.php.stub',
                 'Repositories/{class}Repository.php' => 'Repository.php.stub',
                 'Services/{class}Service.php' => 'Service.php.stub',
             ],
@@ -234,7 +234,7 @@ return [
         'factory' => [
             'stub_directory' => 'default',
             'files' => [
-                'Database/Factories/{class}ModelFactory.php' => 'ModelFactory.php.stub',
+                'Db/Factories/{class}ModelFactory.php' => 'ModelFactory.php.stub',
             ],
         ],
         'provider' => [
